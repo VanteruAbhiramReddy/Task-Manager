@@ -1,0 +1,56 @@
+Now set up login/logout/signup/delete account and create tasks, delete tasks, update tasks and get all tasks.
+Endpoints:
+BASE_URL=https://task-manager-backend-ow66.onrender.com
+
+Signup : POST BASE_URL/auth/signup
+{
+    "name":"",
+    "email":"",
+    "password":""
+}
+
+login : POST BASE_URL/auth/login
+{
+    "email":"",
+    "password":""
+}
+delete account : POST BASE_URL/auth/delete
+{
+    "password":""
+}
+logout : DELETE BASE_URL/auth/logout
+
+dashboard : GET BASE_URL/auth/dashboard
+
+Make sure passwords must have 8 to 18 letters.
+Logout and delete account are protected routes.
+The backend uses session and cookie authentication.
+
+GET ALL TASKS : GET BASE_URL/tasks
+
+CREATE TASK : POST BASE_URL/tasks
+{
+    "title":"",
+    "description":"",
+    "completed" :""
+}
+
+UPDATE TASK: PUT BASE_URL/tasks
+{
+    "id":number,
+    "title":"",
+    "description":"",
+    "completed":""
+}
+
+DELETE TASK : DELETE BASE_URL/tasks/:id
+
+All these tasks routes are protected routes. 
+Now set the whole frontend such that first the landing page comes and requests for dashboard, if successful then load all tasks and redirect to the app dashboard else keep it on landing page. Also connect the buttons login and signup such that on click they redirect to respective forms. Use page frame for everything. Also make use of react router to load all different pages. Make sure there are return routes for both public and protected features seperately. Update the profile such that on clicing th icon it shows data recieved on GET /dashboard and a logout button that hits DELETE /Logout route. Don't store anything on memory and make full use of the endpoints I gave.
+
+Create all API functions and keep record of all API URLS in a js file in api directory.
+
+Restrictions:
+
+1. Don't add any endpoints by self.
+2. Strictly use the resources I provided.
